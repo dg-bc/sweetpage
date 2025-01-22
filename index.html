@@ -3,83 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>可爱的页面</title>
+    <title>甜蜜小世界</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
     <style>
         body {
-            background-color: #FDE2E4;
-            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background-color: #FFE4E1;
+            font-family: 'Pacifico', cursive, sans-serif;
             text-align: center;
             margin: 0;
             padding: 0;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
         }
 
         h1 {
-            color: #FF6F61;
+            color: #FF6F91;
             font-size: 50px;
-            margin-bottom: 20px;
-            animation: bounce 1s infinite alternate;
-        }
-
-        p {
-            font-size: 20px;
-            color: #FFB3B3;
-            margin: 10px;
-        }
-
-        .cute-heart {
-            width: 100px;
-            height: 100px;
-            background-color: #FF6F61;
-            clip-path: polygon(50% 0%, 0% 35%, 50% 100%, 100% 35%);
-            margin-top: 20px;
-            animation: heart-beat 1.5s infinite alternate;
-        }
-
-        @keyframes bounce {
-            0% {
-                transform: translateY(0);
-            }
-            100% {
-                transform: translateY(-10px);
-            }
-        }
-
-        @keyframes heart-beat {
-            0% {
-                transform: scale(1);
-            }
-            100% {
-                transform: scale(1.2);
-            }
-        }
-
-        .button {
-            background-color: #FF6F61;
-            color: white;
-            padding: 15px 30px;
-            font-size: 18px;
-            border: none;
-            border-radius: 50px;
-            cursor: pointer;
-            transition: background-color 0.3s;
             margin-top: 30px;
         }
 
-        .button:hover {
-            background-color: #FF9AA2;
+        .video-container {
+            margin: 20px auto;
         }
 
+        video {
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 600px;
+        }
+
+        .footer {
+            margin-top: 50px;
+            font-size: 16px;
+            color: #FFB3C6;
+        }
+
+        .background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(circle at 50% 50%, #FFE4E1, #FFD9D6);
+            z-index: -1;
+        }
     </style>
 </head>
 <body>
-    <h1>欢迎来到可爱的小世界！</h1>
-    <p>这里有你喜欢的心形和跳动的标题哦~</p>
-    <div class="cute-heart"></div>
-    <button class="button" onclick="alert('你点击了可爱的按钮！')">点击我！</button>
+    <div class="background"></div>
+    <h1>欢迎来到甜蜜小世界！🍬</h1>
+
+    <!-- 本地视频 -->
+    <div class="video-container">
+        <h2>本地视频展示</h2>
+        <video controls>
+            <!-- 替换 'video.mp4' 为你上传到 GitHub 的视频文件名 -->
+            <source src="video.mp4" type="video/mp4">
+            您的浏览器不支持视频播放。
+        </video>
+    </div>
+
+    <div class="footer">© 2025 甜蜜小世界 | 让甜蜜永驻心间 💖</div>
 </body>
 </html>
