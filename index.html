@@ -12,6 +12,7 @@
             text-align: center;
             margin: 0;
             padding: 0;
+            overflow: hidden; /* 防止漂浮爱心溢出页面 */
         }
 
         h1 {
@@ -45,6 +46,29 @@
             background-image: radial-gradient(circle at 50% 50%, #FFE4E1, #FFD9D6);
             z-index: -1;
         }
+
+        /* 漂浮爱心样式 */
+        .heart {
+            position: absolute;
+            color: #FF6F91;
+            font-size: 20px;
+            font-weight: bold;
+            animation: float 5s infinite ease-in-out;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0) scale(1);
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(-800px) scale(0.8);
+                opacity: 0;
+            }
+        }
     </style>
 </head>
 <body>
@@ -62,5 +86,28 @@
     </div>
 
     <div class="footer">© 2025 甜蜜小世界 | 让甜蜜永驻心间 💖</div>
+
+    <!-- 漂浮爱心 -->
+    <script>
+        function createHeart() {
+            const heart = document.createElement("div");
+            heart.className = "heart";
+            heart.textContent = "爱你李浩然 💖";
+            document.body.appendChild(heart);
+
+            // 随机生成爱心的位置
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.animationDuration = Math.random() * 3 + 3 + "s"; // 动画时长 3-6 秒
+            heart.style.fontSize = Math.random() * 10 + 20 + "px"; // 字体大小 20-30px
+
+            // 5秒后删除爱心
+            setTimeout(() => {
+                heart.remove();
+            }, 5000);
+        }
+
+        // 每300毫秒生成一个爱心
+        setInterval(createHeart, 300);
+    </script>
 </body>
 </html>
